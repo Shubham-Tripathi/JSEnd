@@ -24,6 +24,5 @@ module.exports.start = function start() {
   app.listen(config.port, function () {
     console.log("Server started on port " + config.port);
   });
-
 });
-}
+};
