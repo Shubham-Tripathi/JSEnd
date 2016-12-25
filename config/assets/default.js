@@ -4,6 +4,6 @@
 
 module.exports = {
   server: {
-    routes: ['../../server/routes/dashboard.js']
+    routes: 'server/**/*.js'
   }
 };

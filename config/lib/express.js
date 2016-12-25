@@ -3,8 +3,10 @@
 /**
  * Module dependencies.
  */
-var assets = require('../assets/default.js'),
-    express = require('express');
+ var glob = require('glob'),
+     path = require('path'),
+     assets = require('../assets/default.js'),
+     express = require('express');
 
 /**
  * Initialize application middleware
@@ -26,10 +28,10 @@ module.exports.initMiddleware = function (app) {
  * Configure the modules server routes
  */
 module.exports.initModulesServerRoutes = function (app) {
-  console.log(assets.server.routes);
-  assets.server.routes.forEach(function(routePath) {
-    require(routePath);
-  })
+  glob.sync(assets.server.routes).forEach(function(file) {
+    console.log(file);
+    require(path.resolve(file))(app);
+  });
 };
 
 /**

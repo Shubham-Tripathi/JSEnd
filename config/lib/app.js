@@ -21,8 +21,8 @@ module.exports.start = function start() {
   _this.init(function (app, db) {
 
   // Start the app by listening on <port> at <host>
-  app.listen(config.port, function () {
-    console.log("Server started on port " + config.port);
+  app.listen(3000, function () {
+    console.log("Server started on port ");
   });
 });
 };
