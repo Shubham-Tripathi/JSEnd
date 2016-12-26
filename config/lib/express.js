@@ -13,6 +13,8 @@
  */
 module.exports.initMiddleware = function (app) {
 
+  app.use('/client', express.static("client"));
+
   // Initialize favicon middleware
   // app.use(favicon(app.locals.favicon));
   //

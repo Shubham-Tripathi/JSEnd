@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('CitrixApp')
+angular.module('JSEnd')
 //=========================================================================
 //Configuring CitrixApp
 //=========================================================================
@@ -15,14 +15,16 @@ angular.module('CitrixApp')
       /**
        * Login Route
        */
-        .state('', {
-          url : '',
-          templateUrl: '',
+        .state('dashboard', {
+          url : '/dashboard',
+          templateUrl: '/client/app/components/dashboard/dashboard.view.html',
+					// controller : 'dashboardController',
+					// controllerAs : 'dashCtrl',
           authenticate: false,
           data : {}
         });
 
-        $urlRouterProvider.otherwise('');
+        $urlRouterProvider.otherwise('dashboard');
   }
 ])
 
