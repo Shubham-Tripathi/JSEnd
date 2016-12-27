@@ -12,21 +12,26 @@
     <!-- JS (fontawesome, bootstrap, load angular, ui-router, and our custom js file) -->
     <script src="/client/assets/lib/angular/angular.min.js"></script>
     <script src="/client/assets/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <script src="/client/app/app.module.js"></script>
+    <script src="/client/app/app.route.js"></script>
+
+    
     <!-- angular services -->
 
     <!-- angular controllers -->
+    <script src="/client/app/components/mainController/mainController.controller.js"></script>
 
     <!-- angular directive -->
 
     <!-- custom filters -->
 
-    <script src="/client/app/app.module.js"></script>
-    <script src="/client/app/app.route.js"></script>
+
 
 </head>
 
 <!-- apply our angular app to our site -->
-	<body>
+	<body ng-controller="MainController as MainCtrl">
 
 	<!-- MAIN CONTENT -->
   		<div class="container">

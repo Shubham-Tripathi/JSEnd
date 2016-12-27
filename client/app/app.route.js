@@ -4,35 +4,39 @@ angular.module('JSEnd')
 //=========================================================================
 //Configuring CitrixApp
 //=========================================================================
-.config(['$stateProvider', '$urlRouterProvider',
-	function($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+	function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-	  /**
-	   * Routes definition for navigation
-	   */
-      $stateProvider
+		$locationProvider.html5Mode({
+  		enabled: true,
+  		requireBase: false
+		});
 
-      /**
-       * Login Route
-       */
-        .state('dashboard', {
-          url : '/dashboard',
-          templateUrl: '/client/app/components/dashboard/dashboard.view.html',
-					// controller : 'dashboardController',
-					// controllerAs : 'dashCtrl',
-          authenticate: false,
-          data : {}
-        });
+	/**
+	 * Routes definition for navigation
+	 */
+		$stateProvider
 
-        $urlRouterProvider.otherwise('dashboard');
-  }
-])
+		/**
+		 * Login Route
+		 */
+			.state('/dashboard', {
+				url : '/dashboard',
+				templateUrl: '/client/app/components/dashboard/dashboard.view.html',
+				// controller : 'dashboardController',
+				// controllerAs : 'dashCtrl',
+				authenticate: false,
+				data : {}
+			});
+
+			$urlRouterProvider.otherwise('/dashboard');
+}])
 
 /**
  * Run function of angularJS
  */
-.run(function ($rootScope, $state) {
+.run(['$rootScope', '$state', function ($rootScope, $state) {
   $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
 
   });
-});
+}]);
