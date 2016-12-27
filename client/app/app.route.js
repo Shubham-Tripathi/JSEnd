@@ -23,8 +23,8 @@ angular.module('JSEnd')
 			.state('/dashboard', {
 				url : '/dashboard',
 				templateUrl: '/client/app/components/dashboard/dashboard.view.html',
-				// controller : 'dashboardController',
-				// controllerAs : 'dashCtrl',
+				controller : 'DashboardController',
+				controllerAs : 'DashCtrl',
 				authenticate: false,
 				data : {}
 			});
