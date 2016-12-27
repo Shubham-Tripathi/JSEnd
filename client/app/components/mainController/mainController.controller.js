@@ -3,7 +3,7 @@
 angular.module('JSEnd')
 
 .controller('MainController', [
-  function MainController() {
+  function() {
 
   }
 ]);
