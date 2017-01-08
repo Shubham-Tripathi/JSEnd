@@ -9,6 +9,5 @@
   * Render the main application page
   */
 exports.renderIndex = function (req, res) {
-
   res.sendFile(path.resolve('client/index.html'));
 };
