@@ -31,7 +31,6 @@ module.exports.initMiddleware = function (app) {
  */
 module.exports.initModulesServerRoutes = function (app) {
   glob.sync(assets.server.routes).forEach(function(file) {
-    console.log(file);
     require(path.resolve(file))(app);
   });
 };
